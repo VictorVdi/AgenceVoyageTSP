@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <script src="/js/bootstrap.min.js"></script>
+
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+	{% block menu %}{% endblock %} {# menu #}
+
+    {% block main %}MAIN{% endblock %} {# main #}
+
+	    {% endblock %} {# body #}
+
+	{% block footer %}
+	<div >
+	</div>
+	{% endblock %} {# footer #}
+</body>
+	{% block javascripts %}
+	{% endblock %} {# javascripts #}
+	{% block custompage_script %}
+    {% endblock %} {# custompage_scripts #}
+</html>

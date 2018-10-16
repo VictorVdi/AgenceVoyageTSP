@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des circuits</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Depart</th>
+            <th>Arrivee</th>
+            <th>Duree (jours)</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for circuit in circuits %}
+            <tr>
+                <td>{{ circuit.id }}</td>
+                <td>
+                    <a href="{{ path('front_circuit_show', {id: circuit.id}) }}">{{ circuit.description }}</a>
+                </td>
+                <td>
+                    {{ circuit.getPaysDepart() }}/{{ circuit.getVilleDepart() }} </td>
+                <td>
+                    {{ circuit.getPaysArrivee() }}/{{ circuit.getVilleArrivee() }}
+                </td>
+                <td>
+                    {{ circuit.getDureeCircuit() }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no circuits found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %} {# body #}
