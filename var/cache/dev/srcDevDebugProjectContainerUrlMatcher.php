@@ -64,6 +64,10 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         switch ($pathinfo) {
             default:
                 $routes = array(
+                    '/admin/circuit/' => array(array('_route' => 'admin_circuit_index', '_controller' => 'App\\Controller\\BackofficeCircuitController::index'), null, array('GET' => 0), null),
+                    '/admin/circuit/new' => array(array('_route' => 'admin_circuit_new', '_controller' => 'App\\Controller\\BackofficeCircuitController::new'), null, array('GET' => 0, 'POST' => 1), null),
+                    '/admin/etape/' => array(array('_route' => 'admin_etape_index', '_controller' => 'App\\Controller\\BackofficeEtapeController::index'), null, array('GET' => 0), null),
+                    '/admin/etape/new' => array(array('_route' => 'admin_etape_new', '_controller' => 'App\\Controller\\BackofficeEtapeController::new'), null, array('GET' => 0, 'POST' => 1), null),
                     '/home' => array(array('_route' => 'front', '_controller' => 'App\\Controller\\FrontofficeHomeController::index'), null, array('GET' => 0), null),
                     '/' => array(array('_route' => 'home', '_controller' => 'App\\Controller\\IndexController::indexAction'), null, array('GET' => 0), null),
                     '/_profiler/' => array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null),
@@ -96,20 +100,32 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         $matchedPathinfo = $pathinfo;
         $regexList = array(
             0 => '{^(?'
-                    .'|/circuit/([^/]++)(*:24)'
+                    .'|/admin/(?'
+                        .'|circuit/([^/]++)(?'
+                            .'|(*:36)'
+                            .'|/edit(*:48)'
+                            .'|(*:55)'
+                        .')'
+                        .'|etape/([^/]++)(?'
+                            .'|(*:80)'
+                            .'|/edit(*:92)'
+                            .'|(*:99)'
+                        .')'
+                    .')'
+                    .'|/circuit/([^/]++)(*:125)'
                     .'|/_(?'
-                        .'|error/(\\d+)(?:\\.([^/]++))?(*:62)'
-                        .'|wdt/([^/]++)(*:81)'
+                        .'|error/(\\d+)(?:\\.([^/]++))?(*:164)'
+                        .'|wdt/([^/]++)(*:184)'
                         .'|profiler/([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:126)'
-                                .'|router(*:140)'
+                                .'|search/results(*:230)'
+                                .'|router(*:244)'
                                 .'|exception(?'
-                                    .'|(*:160)'
-                                    .'|\\.css(*:173)'
+                                    .'|(*:264)'
+                                    .'|\\.css(*:277)'
                                 .')'
                             .')'
-                            .'|(*:183)'
+                            .'|(*:287)'
                         .')'
                     .')'
                 .')$}sD',
@@ -120,14 +136,20 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 switch ($m = (int) $matches['MARK']) {
                     default:
                         $routes = array(
-                            24 => array(array('_route' => 'front_circuit_show', '_controller' => 'App\\Controller\\FrontofficeHomeController::circuitShow'), array('id'), array('GET' => 0), null),
-                            62 => array(array('_route' => '_twig_error_test', '_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code', '_format'), null, null),
-                            81 => array(array('_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'), array('token'), null, null),
-                            126 => array(array('_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'), array('token'), null, null),
-                            140 => array(array('_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'), array('token'), null, null),
-                            160 => array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null),
-                            173 => array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null),
-                            183 => array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null),
+                            36 => array(array('_route' => 'admin_circuit_show', '_controller' => 'App\\Controller\\BackofficeCircuitController::show'), array('id'), array('GET' => 0), null),
+                            48 => array(array('_route' => 'admin_circuit_edit', '_controller' => 'App\\Controller\\BackofficeCircuitController::edit'), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            55 => array(array('_route' => 'admin_circuit_delete', '_controller' => 'App\\Controller\\BackofficeCircuitController::delete'), array('id'), array('DELETE' => 0), null),
+                            80 => array(array('_route' => 'admin_etape_show', '_controller' => 'App\\Controller\\BackofficeEtapeController::show'), array('id'), array('GET' => 0), null),
+                            92 => array(array('_route' => 'admin_etape_edit', '_controller' => 'App\\Controller\\BackofficeEtapeController::edit'), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            99 => array(array('_route' => 'admin_etape_delete', '_controller' => 'App\\Controller\\BackofficeEtapeController::delete'), array('id'), array('DELETE' => 0), null),
+                            125 => array(array('_route' => 'front_circuit_show', '_controller' => 'App\\Controller\\FrontofficeHomeController::circuitShow'), array('id'), array('GET' => 0), null),
+                            164 => array(array('_route' => '_twig_error_test', '_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code', '_format'), null, null),
+                            184 => array(array('_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'), array('token'), null, null),
+                            230 => array(array('_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'), array('token'), null, null),
+                            244 => array(array('_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'), array('token'), null, null),
+                            264 => array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null),
+                            277 => array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null),
+                            287 => array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null),
                         );
 
                         list($ret, $vars, $requiredMethods, $requiredSchemes) = $routes[$m];
@@ -153,7 +175,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return $ret;
                 }
 
-                if (183 === $m) {
+                if (287 === $m) {
                     break;
                 }
                 $regex = substr_replace($regex, 'F', $m - $offset, 1 + strlen($m));

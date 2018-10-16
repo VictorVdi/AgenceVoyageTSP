@@ -382,6 +382,20 @@
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/var/log/dev.log</argument>
     </service>
+    <service id="App\Controller\BackofficeCircuitController" class="App\Controller\BackofficeCircuitController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ychIlgF.App\Controller\BackofficeCircuitController"/>
+      </call>
+    </service>
+    <service id="App\Controller\BackofficeEtapeController" class="App\Controller\BackofficeEtapeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ychIlgF.App\Controller\BackofficeEtapeController"/>
+      </call>
+    </service>
     <service id="App\Controller\FrontofficeHomeController" class="App\Controller\FrontofficeHomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -397,6 +411,12 @@
     </service>
     <service id="App\DataFixtures\LoadEtapeData" class="App\DataFixtures\LoadEtapeData" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
+    </service>
+    <service id="App\Form\CircuitType" class="App\Form\CircuitType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\EtapeType" class="App\Form\EtapeType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Repository\CircuitRepository" class="App\Repository\CircuitRepository" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -646,9 +666,12 @@
       <argument type="service" id="form.registry"/>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
+        <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\CircuitType</argument>
+        <argument>App\Form\EtapeType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
@@ -875,7 +898,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.wasPXBS"/>
+      <argument type="service" id=".service_locator.HdQej.c"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -1903,6 +1926,14 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -4150,6 +4181,12 @@
         <argument>server:log</argument>
       </call>
     </service>
+    <service id=".instanceof.Symfony\Component\DependencyInjection\ServiceSubscriberInterface.0.App\Controller\BackofficeCircuitController" class="App\Controller\BackofficeCircuitController" public="false" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BackofficeCircuitController" class="App\Controller\BackofficeCircuitController" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\BackofficeCircuitController" class="App\Controller\BackofficeCircuitController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\DependencyInjection\ServiceSubscriberInterface.0.App\Controller\BackofficeEtapeController" class="App\Controller\BackofficeEtapeController" public="false" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BackofficeEtapeController" class="App\Controller\BackofficeEtapeController" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\BackofficeEtapeController" class="App\Controller\BackofficeEtapeController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\DependencyInjection\ServiceSubscriberInterface.0.App\Controller\FrontofficeHomeController" class="App\Controller\FrontofficeHomeController" public="false" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FrontofficeHomeController" class="App\Controller\FrontofficeHomeController" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\FrontofficeHomeController" class="App\Controller\FrontofficeHomeController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4159,6 +4196,10 @@
     <service id=".abstract.instanceof.App\DataFixtures\LoadCircuitData" class="App\DataFixtures\LoadCircuitData" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\LoadEtapeData" class="App\DataFixtures\LoadEtapeData" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\LoadEtapeData" class="App\DataFixtures\LoadEtapeData" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CircuitType" class="App\Form\CircuitType" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CircuitType" class="App\Form\CircuitType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EtapeType" class="App\Form\EtapeType" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EtapeType" class="App\Form\EtapeType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CircuitRepository" class="App\Repository\CircuitRepository" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CircuitRepository" class="App\Repository\CircuitRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EtapeRepository" class="App\Repository\EtapeRepository" public="false" autowire="true" abstract="true"/>
@@ -4307,9 +4348,50 @@
         <argument>make:migration</argument>
       </call>
     </service>
-    <service id=".service_locator.9_yeNH1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.8bC1TEc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="circuitRepository" type="service" id="App\Repository\CircuitRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.w9i1Olv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="circuit" type="service" id=".errored..service_locator.w9i1Olv.App\Entity\Circuit"/>
+      </argument>
+    </service>
+    <service id=".service_locator.dTFn.OP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="etapeRepository" type="service" id="App\Repository\EtapeRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.WpbYFxo" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="etape" type="service" id=".errored..service_locator.WpbYFxo.App\Entity\Etape"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ax.zAbP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\BackofficeCircuitController::delete" type="service" id=".service_locator.w9i1Olv"/>
+        <argument key="App\Controller\BackofficeCircuitController::edit" type="service" id=".service_locator.w9i1Olv"/>
+        <argument key="App\Controller\BackofficeCircuitController::index" type="service" id=".service_locator.8bC1TEc"/>
+        <argument key="App\Controller\BackofficeCircuitController::show" type="service" id=".service_locator.w9i1Olv"/>
+        <argument key="App\Controller\BackofficeEtapeController::delete" type="service" id=".service_locator.WpbYFxo"/>
+        <argument key="App\Controller\BackofficeEtapeController::edit" type="service" id=".service_locator.WpbYFxo"/>
+        <argument key="App\Controller\BackofficeEtapeController::index" type="service" id=".service_locator.dTFn.OP"/>
+        <argument key="App\Controller\BackofficeEtapeController::show" type="service" id=".service_locator.WpbYFxo"/>
+        <argument key="App\Controller\BackofficeCircuitController:delete" type="service" id=".service_locator.w9i1Olv"/>
+        <argument key="App\Controller\BackofficeCircuitController:edit" type="service" id=".service_locator.w9i1Olv"/>
+        <argument key="App\Controller\BackofficeCircuitController:index" type="service" id=".service_locator.8bC1TEc"/>
+        <argument key="App\Controller\BackofficeCircuitController:show" type="service" id=".service_locator.w9i1Olv"/>
+        <argument key="App\Controller\BackofficeEtapeController:delete" type="service" id=".service_locator.WpbYFxo"/>
+        <argument key="App\Controller\BackofficeEtapeController:edit" type="service" id=".service_locator.WpbYFxo"/>
+        <argument key="App\Controller\BackofficeEtapeController:index" type="service" id=".service_locator.dTFn.OP"/>
+        <argument key="App\Controller\BackofficeEtapeController:show" type="service" id=".service_locator.WpbYFxo"/>
+      </argument>
     </service>
     <service id=".service_locator.yQVjGlt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -4368,9 +4450,11 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.wasPXBS" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.HdQej.c" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\CircuitType" type="service" id="App\Form\CircuitType"/>
+        <argument key="App\Form\EtapeType" type="service" id="App\Form\EtapeType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
@@ -4548,7 +4632,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.9_yeNH1"/>
+      <argument type="service" id=".service_locator.ax.zAbP"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -4568,6 +4652,16 @@
         <argument key="session" type="service" id="session" on-invalid="ignore"/>
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
+    </service>
+    <service id=".service_locator.ychIlgF.App\Controller\BackofficeCircuitController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <argument>App\Controller\BackofficeCircuitController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ychIlgF" method="withContext"/>
+    </service>
+    <service id=".service_locator.ychIlgF.App\Controller\BackofficeEtapeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <argument>App\Controller\BackofficeEtapeController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ychIlgF" method="withContext"/>
     </service>
     <service id=".service_locator.ychIlgF.App\Controller\FrontofficeHomeController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <argument>App\Controller\FrontofficeHomeController</argument>
@@ -4623,6 +4717,8 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.UEpceA5" method="withContext"/>
     </service>
+    <service id=".errored..service_locator.w9i1Olv.App\Entity\Circuit" class="App\Entity\Circuit"/>
+    <service id=".errored..service_locator.WpbYFxo.App\Entity\Etape" class="App\Entity\Etape"/>
     <service id=".service_locator.HKoUR8q" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4948,7 +5044,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="sensio_framework_extra.converter.doctrine.orm.expression_language" alias="sensio_framework_extra.converter.doctrine.orm.expression_language.default" public="false"/>
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.9_yeNH1"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.ax.zAbP"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".service_locator.AoifO_3" alias=".2_ServiceLocator~48JADUe" public="false"/>

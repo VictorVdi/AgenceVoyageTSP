@@ -20,6 +20,16 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
+        'admin_circuit_index' => array(array(), array('_controller' => 'App\\Controller\\BackofficeCircuitController::index'), array(), array(array('text', '/admin/circuit/')), array(), array()),
+        'admin_circuit_new' => array(array(), array('_controller' => 'App\\Controller\\BackofficeCircuitController::new'), array(), array(array('text', '/admin/circuit/new')), array(), array()),
+        'admin_circuit_show' => array(array('id'), array('_controller' => 'App\\Controller\\BackofficeCircuitController::show'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/admin/circuit')), array(), array()),
+        'admin_circuit_edit' => array(array('id'), array('_controller' => 'App\\Controller\\BackofficeCircuitController::edit'), array(), array(array('text', '/edit'), array('variable', '/', '[^/]++', 'id'), array('text', '/admin/circuit')), array(), array()),
+        'admin_circuit_delete' => array(array('id'), array('_controller' => 'App\\Controller\\BackofficeCircuitController::delete'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/admin/circuit')), array(), array()),
+        'admin_etape_index' => array(array(), array('_controller' => 'App\\Controller\\BackofficeEtapeController::index'), array(), array(array('text', '/admin/etape/')), array(), array()),
+        'admin_etape_new' => array(array(), array('_controller' => 'App\\Controller\\BackofficeEtapeController::new'), array(), array(array('text', '/admin/etape/new')), array(), array()),
+        'admin_etape_show' => array(array('id'), array('_controller' => 'App\\Controller\\BackofficeEtapeController::show'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/admin/etape')), array(), array()),
+        'admin_etape_edit' => array(array('id'), array('_controller' => 'App\\Controller\\BackofficeEtapeController::edit'), array(), array(array('text', '/edit'), array('variable', '/', '[^/]++', 'id'), array('text', '/admin/etape')), array(), array()),
+        'admin_etape_delete' => array(array('id'), array('_controller' => 'App\\Controller\\BackofficeEtapeController::delete'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/admin/etape')), array(), array()),
         'front' => array(array(), array('_controller' => 'App\\Controller\\FrontofficeHomeController::index'), array(), array(array('text', '/home')), array(), array()),
         'front_circuit_show' => array(array('id'), array('_controller' => 'App\\Controller\\FrontofficeHomeController::circuitShow'), array(), array(array('variable', '/', '[^/]++', 'id'), array('text', '/circuit')), array(), array()),
         'home' => array(array(), array('_controller' => 'App\\Controller\\IndexController::indexAction'), array(), array(array('text', '/')), array(), array()),
