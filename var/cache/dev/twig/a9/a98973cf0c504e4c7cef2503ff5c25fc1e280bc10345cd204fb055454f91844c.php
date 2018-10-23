@@ -104,12 +104,31 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["circuit"], "getDureeCircuit", array(), "method"), "html", null, true);
             echo "
                 </td>
+                <td>
+                    <a href=\"";
+            // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_circuit_like", array("id" => twig_get_attribute($this->env, $this->source, $context["circuit"], "id", array()))), "html", null, true);
+            echo "\">
+                        ";
+            // line 33
+            if (twig_in_filter(twig_get_attribute($this->env, $this->source, $context["circuit"], "id", array()), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 33, $this->source); })()), "session", array()), "get", array(0 => "likes"), "method"))) {
+                // line 34
+                echo "                            unlike
+                        ";
+            } else {
+                // line 36
+                echo "                            like
+                        ";
+            }
+            // line 38
+            echo "                    </a>
+                </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 33
+            // line 42
             echo "            <tr>
                 <td colspan=\"2\">no circuits found</td>
             </tr>
@@ -118,7 +137,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['circuit'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 46
         echo "        </tbody>
     </table>
 
@@ -143,7 +162,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
 
     public function getDebugInfo()
     {
-        return array (  122 => 37,  113 => 33,  104 => 29,  96 => 26,  89 => 24,  81 => 21,  76 => 19,  73 => 18,  68 => 17,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  141 => 46,  132 => 42,  124 => 38,  120 => 36,  116 => 34,  114 => 33,  110 => 32,  104 => 29,  96 => 26,  89 => 24,  81 => 21,  76 => 19,  73 => 18,  68 => 17,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -177,6 +196,15 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
                 </td>
                 <td>
                     {{ circuit.getDureeCircuit() }}
+                </td>
+                <td>
+                    <a href=\"{{ path('front_circuit_like',{id: circuit.id }) }}\">
+                        {% if  circuit.id in app.session.get('likes') %}
+                            unlike
+                        {% else %}
+                            like
+                        {% endif %}
+                    </a>
                 </td>
             </tr>
         {% else %}

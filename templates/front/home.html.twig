@@ -28,6 +28,15 @@
                 <td>
                     {{ circuit.getDureeCircuit() }}
                 </td>
+                <td>
+                    <a href="{{ path('front_circuit_like',{id: circuit.id }) }}">
+                        {% if  circuit.id in app.session.get('likes') %}
+                            unlike
+                        {% else %}
+                            like
+                        {% endif %}
+                    </a>
+                </td>
             </tr>
         {% else %}
             <tr>
