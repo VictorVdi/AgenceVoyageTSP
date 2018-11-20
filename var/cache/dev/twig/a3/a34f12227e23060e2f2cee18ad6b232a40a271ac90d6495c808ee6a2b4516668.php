@@ -61,14 +61,46 @@ class __TwigTemplate_a346d5986131055b5a1eb02398fe16404744bfa98463687cfe6298cbdde
     <tr>
     </tr>
     <tr>
-        <th>...</th>
-        <td>...</td>
+        <th>Id</th>
+        <td>";
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["circuit"]) || array_key_exists("circuit", $context) ? $context["circuit"] : (function () { throw new Twig_Error_Runtime('Variable "circuit" does not exist.', 13, $this->source); })()), "id", array()), "html", null, true);
+        echo "</td>
     </tr>
     </tbody>
-</table>
+
+    ";
+        // line 17
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["circuit"]) || array_key_exists("circuit", $context) ? $context["circuit"] : (function () { throw new Twig_Error_Runtime('Variable "circuit" does not exist.', 17, $this->source); })()), "etapes", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["etape"]) {
+            // line 18
+            echo "    <tr>
+        <td>";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["etape"], "numeroEtape", array()), "html", null, true);
+            echo "</td>
+        <td>";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["etape"], "getVilleEtape", array(), "method"), "html", null, true);
+            echo "</td>
+        <td>";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["etape"], "getNombreJours", array(), "method"), "html", null, true);
+            echo "</td>
+    </tr>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['etape'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 23
+        echo " ";
+        // line 24
+        echo "</table>
 
 <a href=\"";
-        // line 18
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
         echo "\">retour à l'accueil</a>
 
@@ -93,7 +125,7 @@ class __TwigTemplate_a346d5986131055b5a1eb02398fe16404744bfa98463687cfe6298cbdde
 
     public function getDebugInfo()
     {
-        return array (  72 => 18,  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  104 => 26,  100 => 24,  98 => 23,  89 => 21,  85 => 20,  81 => 19,  78 => 18,  74 => 17,  67 => 13,  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -109,10 +141,18 @@ class __TwigTemplate_a346d5986131055b5a1eb02398fe16404744bfa98463687cfe6298cbdde
     <tr>
     </tr>
     <tr>
-        <th>...</th>
-        <td>...</td>
+        <th>Id</th>
+        <td>{{ circuit.id }}</td>
     </tr>
     </tbody>
+
+    {% for etape in circuit.etapes %}
+    <tr>
+        <td>{{ etape.numeroEtape }}</td>
+        <td>{{ etape.getVilleEtape() }}</td>
+        <td>{{ etape.getNombreJours() }}</td>
+    </tr>
+    {% endfor %} {# etapes #}
 </table>
 
 <a href=\"{{ path('front') }}\">retour à l'accueil</a>

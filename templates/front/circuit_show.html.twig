@@ -9,10 +9,18 @@
     <tr>
     </tr>
     <tr>
-        <th>...</th>
-        <td>...</td>
+        <th>Id</th>
+        <td>{{ circuit.id }}</td>
     </tr>
     </tbody>
+
+    {% for etape in circuit.etapes %}
+    <tr>
+        <td>{{ etape.numeroEtape }}</td>
+        <td>{{ etape.getVilleEtape() }}</td>
+        <td>{{ etape.getNombreJours() }}</td>
+    </tr>
+    {% endfor %} {# etapes #}
 </table>
 
 <a href="{{ path('front') }}">retour à l'accueil</a>
