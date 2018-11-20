@@ -70,27 +70,25 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "main"));
 
         // line 10
-        echo "<<!DOCTYPE html>
-    <html lang=\"fr\">
+        echo "    <html lang=\"fr\">
 
     <head>
 
         <meta charset=\"utf-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
-        <meta name=\"description\" content=\"\">
-        <meta name=\"author\" content=\"\">
+        <meta name=\"Auteur\" content=\"Dylan Soton & Victor Védie\">
 
-        <title>Grayscale - Start Bootstrap Theme</title>
+        <title>La Boule Magique</title>
 
         <!-- Bootstrap core CSS -->
-        <link href=\"/css/bootstrap.css\" rel=\"stylesheet\">
+        <link href=\"/css/bootstrap.min.css\" rel=\"stylesheet\">
 
-        <!-- Custom fonts for this template -->
-        <link href=\"/css/bootstrap.css\" rel=\"stylesheet\">
+        <!-- Quelques polices d'écritures plus jolies :) -->
+        <link href=\"/css/bootstrap.min.css\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Varela+Round\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i\" rel=\"stylesheet\">
 
-        <!-- Custom styles for this template -->
+        <!-- Un Css modifié :) -->
         <link href=\"css/accueil.css\" rel=\"stylesheet\">
 
     </head>
@@ -100,7 +98,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
     <!-- NavBar Menu -->
     <nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
         <div class=\"container\">
-            <a class=\"navbar-brand js-scroll-trigger\" href=\"#page-top\">Start Bootstrap</a>
+            <a class=\"navbar-brand js-scroll-trigger\" href=\"#page-top\">La Boule de Lavage</a>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 Menu
                 <i class=\"fas fa-bars\"></i>
@@ -122,7 +120,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
                 <h1 class=\"mx-auto my-0 text-uppercase\">La Boule Magique</h1>
                 <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Une agence de qualité, pour des gens de qualité.</h2>
                 <a href=\"";
-        // line 61
+        // line 59
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
         echo "\" class=\"btn btn-primary js-scroll-trigger\">Réserver mon Voyage !</a>
             </div>
@@ -139,7 +137,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
                         <a href=\"http://club-intech.fr/\">INTech</a>. Retrouvez nous sur notre superbe autre site web qui n'est pas encore en ligne...</p>
                 </div>
             </div>
-            <img src=\"img/ipad.png\" class=\"img-fluid\" alt=\"\">
+            <img src=\"/img/intech_logo.svg\" class=\"img-fluid\" alt=\"\">
         </div>
     </section>
 
@@ -207,9 +205,9 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
         </div>
     </footer>
 
-    <!-- Bootstrap & JavaScript -->
-    <script src=\"/js/bootstrap.bundle.js\"></script>
-    <script src=\"/js/bootstrap.js\"></script>
+    <!-- bootstrap.min & JavaScript -->
+    <script src=\"/js/bootstrap.min.bundle.js\"></script>
+    <script src=\"/js/bootstrap.min.js\"></script>
 
     <script src=\"js/accueil.js\"></script>
 
@@ -238,7 +236,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
 
     public function getDebugInfo()
     {
-        return array (  126 => 61,  73 => 10,  64 => 9,  45 => 7,  15 => 5,);
+        return array (  124 => 59,  73 => 10,  64 => 9,  45 => 7,  15 => 5,);
     }
 
     public function getSourceContext()
@@ -252,27 +250,25 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
 {% block title %}{{ parent() }} - Welcome{% endblock %}
 
 {% block main %}
-<<!DOCTYPE html>
     <html lang=\"fr\">
 
     <head>
 
         <meta charset=\"utf-8\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
-        <meta name=\"description\" content=\"\">
-        <meta name=\"author\" content=\"\">
+        <meta name=\"Auteur\" content=\"Dylan Soton & Victor Védie\">
 
-        <title>Grayscale - Start Bootstrap Theme</title>
+        <title>La Boule Magique</title>
 
         <!-- Bootstrap core CSS -->
-        <link href=\"/css/bootstrap.css\" rel=\"stylesheet\">
+        <link href=\"/css/bootstrap.min.css\" rel=\"stylesheet\">
 
-        <!-- Custom fonts for this template -->
-        <link href=\"/css/bootstrap.css\" rel=\"stylesheet\">
+        <!-- Quelques polices d'écritures plus jolies :) -->
+        <link href=\"/css/bootstrap.min.css\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Varela+Round\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i\" rel=\"stylesheet\">
 
-        <!-- Custom styles for this template -->
+        <!-- Un Css modifié :) -->
         <link href=\"css/accueil.css\" rel=\"stylesheet\">
 
     </head>
@@ -282,7 +278,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
     <!-- NavBar Menu -->
     <nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
         <div class=\"container\">
-            <a class=\"navbar-brand js-scroll-trigger\" href=\"#page-top\">Start Bootstrap</a>
+            <a class=\"navbar-brand js-scroll-trigger\" href=\"#page-top\">La Boule de Lavage</a>
             <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 Menu
                 <i class=\"fas fa-bars\"></i>
@@ -318,7 +314,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
                         <a href=\"http://club-intech.fr/\">INTech</a>. Retrouvez nous sur notre superbe autre site web qui n'est pas encore en ligne...</p>
                 </div>
             </div>
-            <img src=\"img/ipad.png\" class=\"img-fluid\" alt=\"\">
+            <img src=\"/img/intech_logo.svg\" class=\"img-fluid\" alt=\"\">
         </div>
     </section>
 
@@ -386,9 +382,9 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
         </div>
     </footer>
 
-    <!-- Bootstrap & JavaScript -->
-    <script src=\"/js/bootstrap.bundle.js\"></script>
-    <script src=\"/js/bootstrap.js\"></script>
+    <!-- bootstrap.min & JavaScript -->
+    <script src=\"/js/bootstrap.min.bundle.js\"></script>
+    <script src=\"/js/bootstrap.min.js\"></script>
 
     <script src=\"js/accueil.js\"></script>
 
