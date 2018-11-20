@@ -57,6 +57,6 @@ class __TwigTemplate_41bab2b7f2bb5f76763a24e455b1585fe21817b778e628362cd6dee3794
 <?php else: ?>
 <?php echo \$view['form']->block(\$form, 'choice_widget_collapsed') ?>
 <?php endif ?>
-", "@Framework/Form/choice_widget.html.php", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/framework-bundle/Resources/views/Form/choice_widget.html.php");
+", "@Framework/Form/choice_widget.html.php", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/framework-bundle/Resources/views/Form/choice_widget.html.php");
     }
 }

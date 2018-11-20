@@ -55,6 +55,6 @@ class __TwigTemplate_8748e38bd183d5cb58a56a7ac226ebca91d6dfc058353c87e466d7a25f8
     <?php \$attr['data-prototype'] = \$view->escape(\$view['form']->row(\$prototype)) ?>
 <?php endif ?>
 <?php echo \$view['form']->widget(\$form, array('attr' => \$attr)) ?>
-", "@Framework/Form/collection_widget.html.php", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/framework-bundle/Resources/views/Form/collection_widget.html.php");
+", "@Framework/Form/collection_widget.html.php", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/framework-bundle/Resources/views/Form/collection_widget.html.php");
     }
 }

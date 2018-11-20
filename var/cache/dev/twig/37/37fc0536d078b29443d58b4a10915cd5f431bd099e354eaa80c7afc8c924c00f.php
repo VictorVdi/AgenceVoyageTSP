@@ -88,6 +88,6 @@ class __TwigTemplate_0a2d912175ed03aecc2f1123d954a9fc4d3a5b79a16ed2d9557424d09d7
 {{ include('@Twig/Exception/traces.txt.twig', { exception: e }, with_context = false) }}
 
 {% endfor %}
-", "@Twig/Exception/exception.txt.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/twig-bundle/Resources/views/Exception/exception.txt.twig");
+", "@Twig/Exception/exception.txt.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/twig-bundle/Resources/views/Exception/exception.txt.twig");
     }
 }

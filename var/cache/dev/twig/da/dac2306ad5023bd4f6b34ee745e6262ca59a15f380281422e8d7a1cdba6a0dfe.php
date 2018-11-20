@@ -49,6 +49,6 @@ class __TwigTemplate_5d08a091b9a328e08e5f19cc090034c4d78b61c5848b8a9adfbdcfd8c0d
     public function getSourceContext()
     {
         return new Twig_Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', array('type' => isset(\$type) ? \$type : 'search')) ?>
-", "@Framework/Form/search_widget.html.php", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/framework-bundle/Resources/views/Form/search_widget.html.php");
+", "@Framework/Form/search_widget.html.php", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/framework-bundle/Resources/views/Form/search_widget.html.php");
     }
 }

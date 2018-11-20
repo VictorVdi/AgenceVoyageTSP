@@ -196,6 +196,6 @@ a.doc:hover {
     top: -7em;
     visibility: hidden;
 }
-", "@WebProfiler/Profiler/open.css.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.css.twig");
+", "@WebProfiler/Profiler/open.css.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.css.twig");
     }
 }

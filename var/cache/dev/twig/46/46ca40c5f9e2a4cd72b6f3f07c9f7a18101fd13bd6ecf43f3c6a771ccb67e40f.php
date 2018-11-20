@@ -94,6 +94,6 @@ class __TwigTemplate_39eb1550bfc6e1028cd7681fb8eab388fc0dddf7c81ad05c7edff1d9213
     </exception>
 {% endfor %}
 </error>
-", "@Twig/Exception/exception.xml.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/twig-bundle/Resources/views/Exception/exception.xml.twig");
+", "@Twig/Exception/exception.xml.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/twig-bundle/Resources/views/Exception/exception.xml.twig");
     }
 }

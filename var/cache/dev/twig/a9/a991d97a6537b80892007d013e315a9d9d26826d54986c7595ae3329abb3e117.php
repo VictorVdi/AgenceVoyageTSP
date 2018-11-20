@@ -81,6 +81,6 @@ class __TwigTemplate_855cffcaae669d58e7aeb81eae05ba5ff2207a4b4c4b413064f6e81e8d4
             </trace>
 {% endfor %}
         </traces>
-", "@Twig/Exception/traces.xml.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/twig-bundle/Resources/views/Exception/traces.xml.twig");
+", "@Twig/Exception/traces.xml.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/twig-bundle/Resources/views/Exception/traces.xml.twig");
     }
 }

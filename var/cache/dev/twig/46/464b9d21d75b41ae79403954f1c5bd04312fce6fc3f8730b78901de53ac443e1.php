@@ -95,6 +95,6 @@ class __TwigTemplate_c4639c8975d64f8616f6663a2023a30a2aae3f7aeff5d98014a7460ec25
         </div>
     </body>
 </html>
-", "@Twig/Exception/error.html.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/twig-bundle/Resources/views/Exception/error.html.twig");
+", "@Twig/Exception/error.html.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/twig-bundle/Resources/views/Exception/error.html.twig");
     }
 }

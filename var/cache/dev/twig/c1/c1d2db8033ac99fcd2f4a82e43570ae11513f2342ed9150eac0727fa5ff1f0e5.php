@@ -71,6 +71,6 @@ The server returned a \"{{ status_code }} {{ status_text }}\".
 
 Something is broken. Please let us know what you were doing when this error occurred.
 We will fix it as soon as possible. Sorry for any inconvenience caused.
-", "@Twig/Exception/error.txt.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/twig-bundle/Resources/views/Exception/error.txt.twig");
+", "@Twig/Exception/error.txt.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/twig-bundle/Resources/views/Exception/error.txt.twig");
     }
 }

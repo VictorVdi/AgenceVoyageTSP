@@ -140,6 +140,6 @@ class __TwigTemplate_52d8e02f9d2aad3ebd3d478e12d854d40d48d75206b149990002254dd1b
     <h2>{{ messages[about].title }}</h2>
     <p>{{ messages[about].message }}</p>
 {% endblock %}
-", "@WebProfiler/Profiler/info.html.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/info.html.twig");
+", "@WebProfiler/Profiler/info.html.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/info.html.twig");
     }
 }

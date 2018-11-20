@@ -121,6 +121,6 @@ class __TwigTemplate_98f3867af0a274daf88eb763cef4a4451232c6632b442c5d45684222419
 .exception-message-wrapper .container {
     min-height: auto;
 }
-", "@WebProfiler/Collector/exception.css.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
 }

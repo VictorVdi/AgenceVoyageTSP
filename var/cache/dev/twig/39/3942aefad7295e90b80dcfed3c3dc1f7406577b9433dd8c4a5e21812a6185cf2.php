@@ -117,6 +117,6 @@ class __TwigTemplate_42d8cc2dff8dad87ccb77109b2af540765db8e647283dddb00b48b50ab1
 
     <a href=\"{{ path('admin_circuit_index') }}\">back to list</a>
 {% endblock %}
-", "back/circuit/new.html.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/templates/back/circuit/new.html.twig");
+", "back/circuit/new.html.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/templates/back/circuit/new.html.twig");
     }
 }

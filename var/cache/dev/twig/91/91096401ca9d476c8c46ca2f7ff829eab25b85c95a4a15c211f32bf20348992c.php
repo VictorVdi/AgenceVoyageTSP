@@ -83,6 +83,6 @@ class __TwigTemplate_b91f80e89701f93c2fb3824de3562a0058ba984ac348b0f77aade046545
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
     }
 }

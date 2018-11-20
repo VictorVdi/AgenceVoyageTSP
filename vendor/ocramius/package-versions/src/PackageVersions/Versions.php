@@ -10,7 +10,7 @@ namespace PackageVersions;
  */
 final class Versions
 {
-    const ROOT_PACKAGE_NAME = 'oberger/tspcsc4101-agvoy-skeleton';
+    const ROOT_PACKAGE_NAME = '__root__';
     const VERSIONS = array (
   'doctrine/annotations' => 'v1.6.0@c7f2050c68a9ab0bdb0f98567ec08d80ea7d24d5',
   'doctrine/cache' => 'v1.8.0@d768d58baee9a4862ca783840eca1b9add7a7f57',
@@ -46,7 +46,7 @@ final class Versions
   'psr/simple-cache' => '1.0.1@408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
   'sensio/framework-extra-bundle' => 'v5.2.1@535b56b7b0325e87b15b9c57bd3631ae2a0b9f16',
   'swiftmailer/swiftmailer' => 'v6.1.3@8ddcb66ac10c392d3beb54829eef8ac1438595f4',
-  'symfony/asset' => 'v4.1.5@7bec13dad0df8146ee6ba9350203fcc832814bfe',
+  'symfony/asset' => 'v4.1.7@7bec13dad0df8146ee6ba9350203fcc832814bfe',
   'symfony/cache' => 'v4.1.5@05ce0ddc8bc1ffe592105398fc2c725cb3080a38',
   'symfony/config' => 'v4.1.5@b3d4d7b567d7a49e6dfafb6d4760abc921177c96',
   'symfony/console' => 'v4.1.5@d3dbe91fd5b8b11ecb73508c844bc6a490de15b4',
@@ -58,14 +58,14 @@ final class Versions
   'symfony/filesystem' => 'v4.1.5@a10ae719b02c47ecba5c684ca2b505f3a49bf397',
   'symfony/finder' => 'v4.1.5@f0b042d445c155501793e7b8007457f9f5bb1c8c',
   'symfony/flex' => 'v1.1.1@9fb60f232af0764d58002e7872acb43a74506d25',
-  'symfony/force-lowest' => 'v4.1.0@',
+  'symfony/force-lowest' => 'v4.1.0@e5662c331ad9efe624dc74981d575eddd5a865e7',
   'symfony/form' => 'v4.1.5@50a5fd0eb801aff0c4b50875050d10e4cdeed617',
   'symfony/framework-bundle' => 'v4.1.5@462c6acc8c7eeff5066b94d9943422fccdf11fd8',
   'symfony/http-foundation' => 'v4.1.5@2ce66353d0a6ea96bc54bc9ecf8bcea4eaf5896c',
   'symfony/http-kernel' => 'v4.1.5@74b1d37bf9a1cddc38093530c0a931a310994ea5',
   'symfony/inflector' => 'v4.1.5@07810b5c88ec0c2e98972571a40a126b44664e13',
   'symfony/intl' => 'v4.1.5@486fd5ef455ea4b312166bef1b354bf7abcbc6f5',
-  'symfony/lts' => 'dev-master@',
+  'symfony/lts' => 'dev-master@c1affae45b78aee036effa1759237e7fa96d4af2',
   'symfony/monolog-bridge' => 'v4.1.5@858737f5ec0266ed37b6b687020283b6e78ae220',
   'symfony/monolog-bundle' => 'v3.3.0@8204f3cd7c1bd6a6e2955c0a34475243a7bd9802',
   'symfony/options-resolver' => 'v4.1.5@40f0e40d37c1c8a762334618dea597d64bbb75ff',
@@ -107,12 +107,12 @@ final class Versions
   'symfony/var-dumper' => 'v4.1.5@1509020968321c1d46408c11c142a2388b1c9b0c',
   'symfony/web-profiler-bundle' => 'v4.1.5@17fed79cdbc4649ea59297e6ca7aa8e89182c3c1',
   'symfony/web-server-bundle' => 'v4.1.5@448d4437e95d0884856a1e83bc51a15b5d048060',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php71' => '*@',
-  'symfony/polyfill-php70' => '*@',
-  'symfony/polyfill-php56' => '*@',
-  'oberger/tspcsc4101-agvoy-skeleton' => 'v3.0@',
+  'symfony/polyfill-ctype' => '*@9c4494227c0ac2630afb174995ab1c3972ba6ff2',
+  'symfony/polyfill-iconv' => '*@9c4494227c0ac2630afb174995ab1c3972ba6ff2',
+  'symfony/polyfill-php71' => '*@9c4494227c0ac2630afb174995ab1c3972ba6ff2',
+  'symfony/polyfill-php70' => '*@9c4494227c0ac2630afb174995ab1c3972ba6ff2',
+  'symfony/polyfill-php56' => '*@9c4494227c0ac2630afb174995ab1c3972ba6ff2',
+  '__root__' => 'dev-master@9c4494227c0ac2630afb174995ab1c3972ba6ff2',
 );
 
     private function __construct()
