@@ -46,20 +46,50 @@
                         <a class="nav-link js-scroll-trigger" href="#nouscontacter">Nous contacter</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if not app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="login">Login</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger">Bonjour, {{ app.user.username }}</a>
+                        </li>
+                    {% endif %}
+                </ul>
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="logout">Logout</a>
+                    </li>
+                {% endif %}
             </div>
         </div>
     </nav>
 
     <!-- Haut de page -->
-    <header class="masthead">
-        <div class="container d-flex h-100 align-items-center">
-            <div class="mx-auto text-center">
-                <h1 class="mx-auto my-0 text-uppercase">La Boule Magique</h1>
-                <h2 class="text-white-50 mx-auto mt-2 mb-5">Une agence de qualité, pour des gens de qualité.</h2>
-                <a href="{{ path('front') }}" class="btn btn-primary js-scroll-trigger">Réserver mon Voyage !</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Menu administrateur</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Faite en bonne usage ... </h2>
+                    <a href="{{ path('front') }}" class="btn btn-primary js-scroll-trigger">Voir la liste des circuits</a>
+                    <a href="{{ path('admin_circuit_index') }}" class="btn btn-primary js-scroll-trigger">Modifier les circuits</a>
+                    <a href="{{ path('admin_etape_index') }}" class="btn btn-primary js-scroll-trigger">Modifier les etapes</a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+    {% else %}
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">La Boule Magique</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Une agence de qualité, pour des gens de qualité.</h2>
+                    <a href="{{ path('front') }}" class="btn btn-primary js-scroll-trigger">Réserver mon Voyage !</a>
+                </div>
+            </div>
+        </header>
+    {% endif %}
 
     <!-- About Section -->
     <section id="nouscontacter" class="about-section text-center">

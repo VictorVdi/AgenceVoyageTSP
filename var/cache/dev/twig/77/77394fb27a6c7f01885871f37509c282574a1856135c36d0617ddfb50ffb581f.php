@@ -109,24 +109,85 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
                         <a class=\"nav-link js-scroll-trigger\" href=\"#nouscontacter\">Nous contacter</a>
                     </li>
                 </ul>
-            </div>
+                <ul class=\"navbar-nav ml-auto\">
+                    ";
+        // line 50
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 50, $this->source); })()), "user", array())) {
+            // line 51
+            echo "                        <li class=\"nav-item\">
+                            <a class=\"nav-link js-scroll-trigger\" href=\"login\">Login</a>
+                        </li>
+                    ";
+        } else {
+            // line 55
+            echo "                        <li class=\"nav-item\">
+                            <a class=\"nav-link js-scroll-trigger\">Bonjour, ";
+            // line 56
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 56, $this->source); })()), "user", array()), "username", array()), "html", null, true);
+            echo "</a>
+                        </li>
+                    ";
+        }
+        // line 59
+        echo "                </ul>
+                ";
+        // line 60
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 60, $this->source); })()), "user", array())) {
+            // line 61
+            echo "                    <li class=\"nav-item\">
+                        <a class=\"nav-link js-scroll-trigger\" href=\"logout\">Logout</a>
+                    </li>
+                ";
+        }
+        // line 65
+        echo "            </div>
         </div>
     </nav>
 
     <!-- Haut de page -->
-    <header class=\"masthead\">
-        <div class=\"container d-flex h-100 align-items-center\">
-            <div class=\"mx-auto text-center\">
-                <h1 class=\"mx-auto my-0 text-uppercase\">La Boule Magique</h1>
-                <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Une agence de qualité, pour des gens de qualité.</h2>
-                <a href=\"";
-        // line 59
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
-        echo "\" class=\"btn btn-primary js-scroll-trigger\">Réserver mon Voyage !</a>
+    ";
+        // line 70
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 71
+            echo "        <header class=\"masthead\">
+            <div class=\"container d-flex h-100 align-items-center\">
+                <div class=\"mx-auto text-center\">
+                    <h1 class=\"mx-auto my-0 text-uppercase\">Menu administrateur</h1>
+                    <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Faite en bonne usage ... </h2>
+                    <a href=\"";
+            // line 76
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
+            echo "\" class=\"btn btn-primary js-scroll-trigger\">Voir la liste des circuits</a>
+                    <a href=\"";
+            // line 77
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_circuit_index");
+            echo "\" class=\"btn btn-primary js-scroll-trigger\">Modifier les circuits</a>
+                    <a href=\"";
+            // line 78
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_etape_index");
+            echo "\" class=\"btn btn-primary js-scroll-trigger\">Modifier les etapes</a>
+                </div>
             </div>
-        </div>
-    </header>
-
+        </header>
+    ";
+        } else {
+            // line 83
+            echo "        <header class=\"masthead\">
+            <div class=\"container d-flex h-100 align-items-center\">
+                <div class=\"mx-auto text-center\">
+                    <h1 class=\"mx-auto my-0 text-uppercase\">La Boule Magique</h1>
+                    <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Une agence de qualité, pour des gens de qualité.</h2>
+                    <a href=\"";
+            // line 88
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
+            echo "\" class=\"btn btn-primary js-scroll-trigger\">Réserver mon Voyage !</a>
+                </div>
+            </div>
+        </header>
+    ";
+        }
+        // line 93
+        echo "
     <!-- About Section -->
     <section id=\"nouscontacter\" class=\"about-section text-center\">
         <div class=\"container\">
@@ -236,7 +297,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
 
     public function getDebugInfo()
     {
-        return array (  124 => 59,  73 => 10,  64 => 9,  45 => 7,  15 => 5,);
+        return array (  190 => 93,  182 => 88,  175 => 83,  167 => 78,  163 => 77,  159 => 76,  152 => 71,  150 => 70,  143 => 65,  137 => 61,  135 => 60,  132 => 59,  126 => 56,  123 => 55,  117 => 51,  115 => 50,  73 => 10,  64 => 9,  45 => 7,  15 => 5,);
     }
 
     public function getSourceContext()
@@ -289,20 +350,50 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
                         <a class=\"nav-link js-scroll-trigger\" href=\"#nouscontacter\">Nous contacter</a>
                     </li>
                 </ul>
+                <ul class=\"navbar-nav ml-auto\">
+                    {% if not app.user %}
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link js-scroll-trigger\" href=\"login\">Login</a>
+                        </li>
+                    {% else %}
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link js-scroll-trigger\">Bonjour, {{ app.user.username }}</a>
+                        </li>
+                    {% endif %}
+                </ul>
+                {% if app.user %}
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link js-scroll-trigger\" href=\"logout\">Logout</a>
+                    </li>
+                {% endif %}
             </div>
         </div>
     </nav>
 
     <!-- Haut de page -->
-    <header class=\"masthead\">
-        <div class=\"container d-flex h-100 align-items-center\">
-            <div class=\"mx-auto text-center\">
-                <h1 class=\"mx-auto my-0 text-uppercase\">La Boule Magique</h1>
-                <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Une agence de qualité, pour des gens de qualité.</h2>
-                <a href=\"{{ path('front') }}\" class=\"btn btn-primary js-scroll-trigger\">Réserver mon Voyage !</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <header class=\"masthead\">
+            <div class=\"container d-flex h-100 align-items-center\">
+                <div class=\"mx-auto text-center\">
+                    <h1 class=\"mx-auto my-0 text-uppercase\">Menu administrateur</h1>
+                    <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Faite en bonne usage ... </h2>
+                    <a href=\"{{ path('front') }}\" class=\"btn btn-primary js-scroll-trigger\">Voir la liste des circuits</a>
+                    <a href=\"{{ path('admin_circuit_index') }}\" class=\"btn btn-primary js-scroll-trigger\">Modifier les circuits</a>
+                    <a href=\"{{ path('admin_etape_index') }}\" class=\"btn btn-primary js-scroll-trigger\">Modifier les etapes</a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+    {% else %}
+        <header class=\"masthead\">
+            <div class=\"container d-flex h-100 align-items-center\">
+                <div class=\"mx-auto text-center\">
+                    <h1 class=\"mx-auto my-0 text-uppercase\">La Boule Magique</h1>
+                    <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Une agence de qualité, pour des gens de qualité.</h2>
+                    <a href=\"{{ path('front') }}\" class=\"btn btn-primary js-scroll-trigger\">Réserver mon Voyage !</a>
+                </div>
+            </div>
+        </header>
+    {% endif %}
 
     <!-- About Section -->
     <section id=\"nouscontacter\" class=\"about-section text-center\">
@@ -394,6 +485,6 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
 
 {% endblock %} {# main #}
 
-", "home.html.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/templates/home.html.twig");
+", "home.html.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/templates/home.html.twig");
     }
 }

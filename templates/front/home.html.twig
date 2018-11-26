@@ -1,36 +1,47 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des circuits</h1>
+    <h1>Liste des circuits programmés</h1>
 
     <table class="table">
         <thead>
         <tr>
-            <th>Id</th>
             <th>Description</th>
+            <th>Nbr voyageurs</th>
+            <th>Date</th>
             <th>Depart</th>
             <th>Arrivee</th>
             <th>Duree (jours)</th>
+            <th>Prix</th>
+            <th>Favoris</th>
         </tr>
         </thead>
         <tbody>
-        {% for circuit in circuits %}
+        {% for circuitP in circuitsP %}
             <tr>
-                <td>{{ circuit.id }}</td>
                 <td>
-                    <a href="{{ path('front_circuit_show', {id: circuit.id}) }}">{{ circuit.description }}</a>
+                    <a href="{{ path('front_circuit_show', {id: circuitP.getCircuit().id}) }}">{{ circuitP.getCircuit().description }}</a>
                 </td>
                 <td>
-                    {{ circuit.getPaysDepart() }}/{{ circuit.getVilleDepart() }} </td>
-                <td>
-                    {{ circuit.getPaysArrivee() }}/{{ circuit.getVilleArrivee() }}
+                    {{ circuitP.getNombrePersonnes() }}
                 </td>
                 <td>
-                    {{ circuit.getDureeCircuit() }}
+                    {{ circuitP.getDateDepart().format('d-m-Y') }}
                 </td>
                 <td>
-                    <a href="{{ path('front_circuit_like',{id: circuit.id }) }}">
-                        {% if  circuit.id in app.session.get('likes') %}
+                    {{ circuitP.getCircuit().getPaysDepart() }}/{{ circuitP.getCircuit().getVilleDepart() }} </td>
+                <td>
+                    {{ circuitP.getCircuit().getPaysArrivee() }}/{{ circuitP.getCircuit().getVilleArrivee() }}
+                </td>
+                <td>
+                    {{ circuitP.getCircuit().getDureeCircuit() }}
+                </td>
+                <td>
+                    {{ circuitP.getPrix() }}
+                </td>
+                <td>
+                    <a href="{{ path('front_circuit_like',{id: circuitP.getCircuit().id }) }}">
+                        {% if  circuitP.getCircuit().id in app.session.get('likes') %}
                             unlike
                         {% else %}
                             like
@@ -46,4 +57,39 @@
         </tbody>
     </table>
 
+    {% if is_granted('ROLE_ADMIN') %}
+        <h1>[admin] Liste des circuits non-programmés</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Description</th>
+                <th>Depart</th>
+                <th>Arrivee</th>
+                <th>Duree (jours)</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for circuitNP in circuitsNP %}
+                <tr>
+                    <td>
+                        <a href="{{ path('front_circuit_show', {id: circuitNP.id}) }}">{{ circuitNP.description }}</a>
+                    </td>
+                    <td>
+                        {{ circuitNP.getPaysDepart() }}/{{ circuitNP.getVilleDepart() }}
+                    <td>
+                        {{ circuitNP.getPaysArrivee() }}/{{ circuitNP.getVilleArrivee() }}
+                    </td>
+                    <td>
+                        {{ circuitNP.getDureeCircuit() }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">no circuits found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 {% endblock %} {# body #}

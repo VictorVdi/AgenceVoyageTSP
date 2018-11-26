@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\ProgrammationCircuit;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Circuit;
@@ -14,9 +15,11 @@ class FrontofficeHomeController extends AbstractController
     public function index()
     {
         $em = $this->getDoctrine()->getManager();
-        $circuits = $em->getRepository(Circuit::Class)->findAll();
+        $circuitsNP = $em->getRepository(Circuit::Class)->findAll();
+        $circuitsP = $em->getRepository(ProgrammationCircuit::Class)->findAll();
         return $this->render('front/home.html.twig', [
-            'circuits' => $circuits ,
+            'circuitsP' => $circuitsP ,
+            'circuitsNP' => $circuitsNP
         ]);
     }
 
