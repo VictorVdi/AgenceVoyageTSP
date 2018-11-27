@@ -67,6 +67,12 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
     <link href=\"../css/circuit.css\" rel=\"stylesheet\">
 
 </head>
+<!-- NavBar Menu -->
+<nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
+    <div class=\"container\">
+        <a href=\"/\">Liste des circuits</a>
+    </div>
+</nav>
 
 
 <section id=\"container-table\" class=\"about-section text-center\">
@@ -88,16 +94,16 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
                         <th scope=\"col\">Favoris</th>
                     </tr>
                     ";
-        // line 41
+        // line 47
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["circuitsP"]) || array_key_exists("circuitsP", $context) ? $context["circuitsP"] : (function () { throw new Twig_Error_Runtime('Variable "circuitsP" does not exist.', 41, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["circuitsP"]) || array_key_exists("circuitsP", $context) ? $context["circuitsP"] : (function () { throw new Twig_Error_Runtime('Variable "circuitsP" does not exist.', 47, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["circuitP"]) {
-            // line 42
+            // line 48
             echo "                        <tr>
                             <td>
                                 <a href=\"";
-            // line 44
+            // line 50
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_circuit_show", array("id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "description", array()), "html", null, true);
@@ -105,26 +111,26 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
                             </td>
                             <td>
                                 ";
-            // line 47
+            // line 53
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getNombrePersonnes", array(), "method"), "html", null, true);
             echo "
                             </td>
                             <td>
                                 ";
-            // line 50
+            // line 56
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getDateDepart", array(), "method"), "format", array(0 => "d-m-Y"), "method"), "html", null, true);
             echo "
                             </td>
                             <td>
                                 ";
-            // line 53
+            // line 59
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "getPaysDepart", array(), "method"), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "getVilleDepart", array(), "method"), "html", null, true);
             echo " </td>
                             <td>
                                 ";
-            // line 55
+            // line 61
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "getPaysArrivee", array(), "method"), "html", null, true);
             echo "/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "getVilleArrivee", array(), "method"), "html", null, true);
@@ -132,33 +138,33 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
                             </td>
                             <td>
                                 ";
-            // line 58
+            // line 64
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "getDureeCircuit", array(), "method"), "html", null, true);
             echo "
                             </td>
                             <td>
                                 ";
-            // line 61
+            // line 67
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getPrix", array(), "method"), "html", null, true);
             echo "
                             </td>
                             <td>
                                 <a href=\"";
-            // line 64
+            // line 70
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_circuit_like", array("id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "id", array()))), "html", null, true);
             echo "\">
                                     ";
-            // line 65
-            if (twig_in_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "id", array()), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 65, $this->source); })()), "session", array()), "get", array(0 => "likes"), "method"))) {
-                // line 66
+            // line 71
+            if (twig_in_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["circuitP"], "getCircuit", array(), "method"), "id", array()), twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 71, $this->source); })()), "session", array()), "get", array(0 => "likes"), "method"))) {
+                // line 72
                 echo "                                        unlike
                                     ";
             } else {
-                // line 68
+                // line 74
                 echo "                                        like
                                     ";
             }
-            // line 70
+            // line 76
             echo "                                </a>
                             </td>
                         </tr>
@@ -166,7 +172,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 74
+            // line 80
             echo "                        <tr>
                             <td colspan=\"2\">no circuits found</td>
                         </tr>
@@ -175,7 +181,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['circuitP'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 78
+        // line 84
         echo "                </table>
             </div>
         </div>
@@ -183,9 +189,9 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
 </section>
 
 ";
-        // line 84
+        // line 90
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 85
+            // line 91
             echo "<section id=\"container-table\" class=\"about-section text-center\">
     <div class=\"container\">
         <div class=\"row\">
@@ -203,18 +209,18 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
                 <th scope=\"col\">Arrivée</th>
                 <th scope=\"col\">Durée (jours)</th>
             </tr>
->
+
             ";
-            // line 103
+            // line 109
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["circuitsNP"]) || array_key_exists("circuitsNP", $context) ? $context["circuitsNP"] : (function () { throw new Twig_Error_Runtime('Variable "circuitsNP" does not exist.', 103, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["circuitsNP"]) || array_key_exists("circuitsNP", $context) ? $context["circuitsNP"] : (function () { throw new Twig_Error_Runtime('Variable "circuitsNP" does not exist.', 109, $this->source); })()));
             $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["circuitNP"]) {
-                // line 104
+                // line 110
                 echo "                <tr>
                     <td>
                         <a href=\"";
-                // line 106
+                // line 112
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front_circuit_show", array("id" => twig_get_attribute($this->env, $this->source, $context["circuitNP"], "id", array()))), "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["circuitNP"], "description", array()), "html", null, true);
@@ -222,14 +228,14 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
                     </td>
                     <td>
                         ";
-                // line 109
+                // line 115
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["circuitNP"], "getPaysDepart", array(), "method"), "html", null, true);
                 echo "/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["circuitNP"], "getVilleDepart", array(), "method"), "html", null, true);
                 echo "
                     <td>
                         ";
-                // line 111
+                // line 117
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["circuitNP"], "getPaysArrivee", array(), "method"), "html", null, true);
                 echo "/";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["circuitNP"], "getVilleArrivee", array(), "method"), "html", null, true);
@@ -237,7 +243,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
                     </td>
                     <td>
                         ";
-                // line 114
+                // line 120
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["circuitNP"], "getDureeCircuit", array(), "method"), "html", null, true);
                 echo "
                     </td>
@@ -246,7 +252,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
                 $context['_iterated'] = true;
             }
             if (!$context['_iterated']) {
-                // line 118
+                // line 124
                 echo "                <tr>
                     <td colspan=\"2\">no circuits found</td>
                 </tr>
@@ -255,7 +261,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['circuitNP'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 122
+            // line 128
             echo "        </table>
 
 
@@ -265,7 +271,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
 </section>
 ";
         }
-        // line 130
+        // line 136
         echo "
 <!-- Petit CopyRight Inutile Donc Indispensable ! -->
     <footer class=\"bg-black small text-center text-white-50\">
@@ -303,7 +309,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
 
     public function getDebugInfo()
     {
-        return array (  269 => 130,  259 => 122,  250 => 118,  241 => 114,  233 => 111,  226 => 109,  218 => 106,  214 => 104,  209 => 103,  189 => 85,  187 => 84,  179 => 78,  170 => 74,  162 => 70,  158 => 68,  154 => 66,  152 => 65,  148 => 64,  142 => 61,  136 => 58,  128 => 55,  121 => 53,  115 => 50,  109 => 47,  101 => 44,  97 => 42,  92 => 41,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  275 => 136,  265 => 128,  256 => 124,  247 => 120,  239 => 117,  232 => 115,  224 => 112,  220 => 110,  215 => 109,  195 => 91,  193 => 90,  185 => 84,  176 => 80,  168 => 76,  164 => 74,  160 => 72,  158 => 71,  154 => 70,  148 => 67,  142 => 64,  134 => 61,  127 => 59,  121 => 56,  115 => 53,  107 => 50,  103 => 48,  98 => 47,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -328,6 +334,12 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
     <link href=\"../css/circuit.css\" rel=\"stylesheet\">
 
 </head>
+<!-- NavBar Menu -->
+<nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
+    <div class=\"container\">
+        <a href=\"/\">Liste des circuits</a>
+    </div>
+</nav>
 
 
 <section id=\"container-table\" class=\"about-section text-center\">
@@ -409,7 +421,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
                 <th scope=\"col\">Arrivée</th>
                 <th scope=\"col\">Durée (jours)</th>
             </tr>
->
+
             {% for circuitNP in circuitsNP %}
                 <tr>
                     <td>

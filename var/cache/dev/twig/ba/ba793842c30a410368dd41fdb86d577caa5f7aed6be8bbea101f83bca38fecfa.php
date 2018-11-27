@@ -95,7 +95,7 @@ class __TwigTemplate_c61eff8bc6dd8af512339e5d38d981d68435e925eb56e89910450f6b5f0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
+        echo "La Boule Magique";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -264,7 +264,7 @@ class __TwigTemplate_c61eff8bc6dd8af512339e5d38d981d68435e925eb56e89910450f6b5f0
         <script src=\"/js/bootstrap.min.js\"></script>
 
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}La Boule Magique{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -285,6 +285,6 @@ class __TwigTemplate_c61eff8bc6dd8af512339e5d38d981d68435e925eb56e89910450f6b5f0
 \t{% block custompage_script %}
     {% endblock %} {# custompage_scripts #}
 </html>
-", "base.html.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/templates/base.html.twig");
+", "base.html.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/templates/base.html.twig");
     }
 }
