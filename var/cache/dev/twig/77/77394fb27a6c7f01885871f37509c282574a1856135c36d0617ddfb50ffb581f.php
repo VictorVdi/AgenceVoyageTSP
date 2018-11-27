@@ -99,10 +99,6 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
     <nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
         <div class=\"container\">
             <a class=\"navbar-brand js-scroll-trigger\" href=\"#page-top\">La Boule de Lavage</a>
-            <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                Menu
-                <i class=\"fas fa-bars\"></i>
-            </button>
             <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">
                 <ul class=\"navbar-nav ml-auto\">
                     <li class=\"nav-item\">
@@ -111,59 +107,59 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
                 </ul>
                 <ul class=\"navbar-nav ml-auto\">
                     ";
-        // line 50
-        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 50, $this->source); })()), "user", array())) {
-            // line 51
+        // line 46
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 46, $this->source); })()), "user", array())) {
+            // line 47
             echo "                        <li class=\"nav-item\">
                             <a class=\"nav-link js-scroll-trigger\" href=\"login\">Login</a>
                         </li>
                     ";
         } else {
-            // line 55
+            // line 51
             echo "                        <li class=\"nav-item\">
                             <a class=\"nav-link js-scroll-trigger\">Bonjour, ";
-            // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 56, $this->source); })()), "user", array()), "username", array()), "html", null, true);
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 52, $this->source); })()), "user", array()), "username", array()), "html", null, true);
             echo "</a>
                         </li>
                     ";
         }
-        // line 59
+        // line 55
         echo "                </ul>
                 ";
-        // line 60
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 60, $this->source); })()), "user", array())) {
-            // line 61
+        // line 56
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 56, $this->source); })()), "user", array())) {
+            // line 57
             echo "                    <li class=\"nav-item\">
                         <a class=\"nav-link js-scroll-trigger\" href=\"logout\">Logout</a>
                     </li>
                 ";
         }
-        // line 65
+        // line 61
         echo "            </div>
         </div>
     </nav>
 
     <!-- Haut de page -->
     ";
-        // line 70
+        // line 66
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 71
+            // line 67
             echo "        <header class=\"masthead\">
             <div class=\"container d-flex h-100 align-items-center\">
                 <div class=\"mx-auto text-center\">
                     <h1 class=\"mx-auto my-0 text-uppercase\">Menu administrateur</h1>
                     <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Faite en bon usage ... </h2>
                     <a href=\"";
-            // line 76
+            // line 72
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
             echo "\" class=\"btn btn-primary js-scroll-trigger\">Voir la liste des circuits</a>
                     <a href=\"";
-            // line 77
+            // line 73
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_circuit_index");
             echo "\" class=\"btn btn-primary js-scroll-trigger\">Modifier les circuits</a>
                     <a href=\"";
-            // line 78
+            // line 74
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_etape_index");
             echo "\" class=\"btn btn-primary js-scroll-trigger\">Modifier les etapes</a>
                 </div>
@@ -171,14 +167,14 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
         </header>
     ";
         } else {
-            // line 83
+            // line 79
             echo "        <header class=\"masthead\">
             <div class=\"container d-flex h-100 align-items-center\">
                 <div class=\"mx-auto text-center\">
                     <h1 class=\"mx-auto my-0 text-uppercase\">La Boule Magique</h1>
                     <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Une agence de qualité, pour des gens de qualité.</h2>
                     <a href=\"";
-            // line 88
+            // line 84
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
             echo "\" class=\"btn btn-primary js-scroll-trigger\">Réserver mon Voyage !</a>
                 </div>
@@ -186,7 +182,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
         </header>
     ";
         }
-        // line 93
+        // line 89
         echo "
     <!-- About Section -->
     <section id=\"nouscontacter\" class=\"about-section text-center\">
@@ -297,7 +293,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
 
     public function getDebugInfo()
     {
-        return array (  190 => 93,  182 => 88,  175 => 83,  167 => 78,  163 => 77,  159 => 76,  152 => 71,  150 => 70,  143 => 65,  137 => 61,  135 => 60,  132 => 59,  126 => 56,  123 => 55,  117 => 51,  115 => 50,  73 => 10,  64 => 9,  45 => 7,  15 => 5,);
+        return array (  186 => 89,  178 => 84,  171 => 79,  163 => 74,  159 => 73,  155 => 72,  148 => 67,  146 => 66,  139 => 61,  133 => 57,  131 => 56,  128 => 55,  122 => 52,  119 => 51,  113 => 47,  111 => 46,  73 => 10,  64 => 9,  45 => 7,  15 => 5,);
     }
 
     public function getSourceContext()
@@ -340,10 +336,6 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
     <nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
         <div class=\"container\">
             <a class=\"navbar-brand js-scroll-trigger\" href=\"#page-top\">La Boule de Lavage</a>
-            <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                Menu
-                <i class=\"fas fa-bars\"></i>
-            </button>
             <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">
                 <ul class=\"navbar-nav ml-auto\">
                     <li class=\"nav-item\">
