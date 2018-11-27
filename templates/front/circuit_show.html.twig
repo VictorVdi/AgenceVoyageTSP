@@ -1,28 +1,77 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<html lang="fr">
 
-<h1>Circuit {{circuit.description}}</h1>
+<head>
 
-<table class="table">
-    <tbody>
-    <tr>
-    </tr>
-    <tr>
-        <th>Id</th>
-        <td>{{ circuit.id }}</td>
-    </tr>
-    </tbody>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Auteur" content="Dylan Soton & Victor Védie">
 
-    {% for etape in circuit.etapes %}
-    <tr>
-        <td>{{ etape.numeroEtape }}</td>
-        <td>{{ etape.getVilleEtape() }}</td>
-        <td>{{ etape.getNombreJours() }}</td>
-    </tr>
-    {% endfor %} {# etapes #}
-</table>
+    <title>La Boule Magique</title>
 
-<a href="{{ path('front') }}">retour à l'accueil</a>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Quelques polices d'écritures plus jolies :) -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Un Css modifié :) -->
+    <link href="css/accueil.css" rel="stylesheet">
+
+</head>
+<body id="page-top">
+
+<!-- NavBar Menu -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Circuit {{circuit.description}}</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#nouscontacter">Nous contacter</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{{ circuit.id }}"></a>
+                </li>
+            </ul>
+
+        </div>
+        <a href="{{ path('front') }}">Liste des circuits</a>
+    </div>
+</nav>
+
+<section id="container_table" class="about-section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">Le circuit </h2>
+                <table class="table">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Ville</th>
+                        <th scope="col">Durée</th>
+                    </tr>
+                {% for etape in circuit.etapes %}
+                    <tr>
+                        <td>{{ etape.numeroEtape }}</td>
+                        <td>{{ etape.getVilleEtape() }}</td>
+                        <td>{{ etape.getNombreJours() }}</td>
+                    </tr>
+                {% endfor %} {# etapes #}
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
 
 {% endblock %} {# body #}

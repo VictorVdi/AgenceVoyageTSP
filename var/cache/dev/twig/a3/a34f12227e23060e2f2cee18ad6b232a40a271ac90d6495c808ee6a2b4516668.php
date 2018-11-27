@@ -50,59 +50,108 @@ class __TwigTemplate_a346d5986131055b5a1eb02398fe16404744bfa98463687cfe6298cbdde
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "
-<h1>Circuit ";
-        // line 5
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["circuit"]) || array_key_exists("circuit", $context) ? $context["circuit"] : (function () { throw new Twig_Error_Runtime('Variable "circuit" does not exist.', 5, $this->source); })()), "description", array()), "html", null, true);
-        echo "</h1>
+        echo "<html lang=\"fr\">
 
-<table class=\"table\">
-    <tbody>
-    <tr>
-    </tr>
-    <tr>
-        <th>Id</th>
-        <td>";
-        // line 13
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["circuit"]) || array_key_exists("circuit", $context) ? $context["circuit"] : (function () { throw new Twig_Error_Runtime('Variable "circuit" does not exist.', 13, $this->source); })()), "id", array()), "html", null, true);
-        echo "</td>
-    </tr>
-    </tbody>
+<head>
 
-    ";
-        // line 17
+    <meta charset=\"utf-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+    <meta name=\"Auteur\" content=\"Dylan Soton & Victor Védie\">
+
+    <title>La Boule Magique</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href=\"/css/bootstrap.min.css\" rel=\"stylesheet\">
+
+    <!-- Quelques polices d'écritures plus jolies :) -->
+    <link href=\"/css/bootstrap.min.css\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css?family=Varela+Round\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i\" rel=\"stylesheet\">
+
+    <!-- Un Css modifié :) -->
+    <link href=\"css/accueil.css\" rel=\"stylesheet\">
+
+</head>
+<body id=\"page-top\">
+
+<!-- NavBar Menu -->
+<nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
+    <div class=\"container\">
+        <a class=\"navbar-brand js-scroll-trigger\" href=\"#page-top\">Circuit ";
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["circuit"]) || array_key_exists("circuit", $context) ? $context["circuit"] : (function () { throw new Twig_Error_Runtime('Variable "circuit" does not exist.', 31, $this->source); })()), "description", array()), "html", null, true);
+        echo "</a>
+        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link js-scroll-trigger\" href=\"#nouscontacter\">Nous contacter</a>
+                </li>
+            </ul>
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link js-scroll-trigger\" href=\"";
+        // line 40
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["circuit"]) || array_key_exists("circuit", $context) ? $context["circuit"] : (function () { throw new Twig_Error_Runtime('Variable "circuit" does not exist.', 40, $this->source); })()), "id", array()), "html", null, true);
+        echo "\">id</a>
+                </li>
+            </ul>
+
+        </div>
+        <a href=\"";
+        // line 45
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
+        echo "\">Liste des circuits</a>
+    </div>
+</nav>
+
+<section id=\"container_table\" class=\"about-section text-center\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-lg-8 mx-auto\">
+                <h2 class=\"text-white mb-4\">Le circuit </h2>
+                <table class=\"table\">
+                    <tr>
+                        <th scope=\"col\">Id</th>
+                        <th scope=\"col\">Ville</th>
+                        <th scope=\"col\">Durée</th>
+                    </tr>
+                ";
+        // line 60
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["circuit"]) || array_key_exists("circuit", $context) ? $context["circuit"] : (function () { throw new Twig_Error_Runtime('Variable "circuit" does not exist.', 17, $this->source); })()), "etapes", array()));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["circuit"]) || array_key_exists("circuit", $context) ? $context["circuit"] : (function () { throw new Twig_Error_Runtime('Variable "circuit" does not exist.', 60, $this->source); })()), "etapes", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["etape"]) {
-            // line 18
-            echo "    <tr>
-        <td>";
-            // line 19
+            // line 61
+            echo "                    <tr>
+                        <td>";
+            // line 62
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["etape"], "numeroEtape", array()), "html", null, true);
             echo "</td>
-        <td>";
-            // line 20
+                        <td>";
+            // line 63
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["etape"], "getVilleEtape", array(), "method"), "html", null, true);
             echo "</td>
-        <td>";
-            // line 21
+                        <td>";
+            // line 64
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["etape"], "getNombreJours", array(), "method"), "html", null, true);
             echo "</td>
-    </tr>
-    ";
+                    </tr>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['etape'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
+        // line 66
         echo " ";
-        // line 24
-        echo "</table>
+        // line 67
+        echo "                </table>
 
-<a href=\"";
-        // line 26
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
-        echo "\">retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
 
 ";
         
@@ -125,7 +174,7 @@ class __TwigTemplate_a346d5986131055b5a1eb02398fe16404744bfa98463687cfe6298cbdde
 
     public function getDebugInfo()
     {
-        return array (  104 => 26,  100 => 24,  98 => 23,  89 => 21,  85 => 20,  81 => 19,  78 => 18,  74 => 17,  67 => 13,  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  146 => 67,  144 => 66,  135 => 64,  131 => 63,  127 => 62,  124 => 61,  120 => 60,  102 => 45,  94 => 40,  82 => 31,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -133,30 +182,80 @@ class __TwigTemplate_a346d5986131055b5a1eb02398fe16404744bfa98463687cfe6298cbdde
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
+<html lang=\"fr\">
 
-<h1>Circuit {{circuit.description}}</h1>
+<head>
 
-<table class=\"table\">
-    <tbody>
-    <tr>
-    </tr>
-    <tr>
-        <th>Id</th>
-        <td>{{ circuit.id }}</td>
-    </tr>
-    </tbody>
+    <meta charset=\"utf-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+    <meta name=\"Auteur\" content=\"Dylan Soton & Victor Védie\">
 
-    {% for etape in circuit.etapes %}
-    <tr>
-        <td>{{ etape.numeroEtape }}</td>
-        <td>{{ etape.getVilleEtape() }}</td>
-        <td>{{ etape.getNombreJours() }}</td>
-    </tr>
-    {% endfor %} {# etapes #}
-</table>
+    <title>La Boule Magique</title>
 
-<a href=\"{{ path('front') }}\">retour à l'accueil</a>
+    <!-- Bootstrap core CSS -->
+    <link href=\"/css/bootstrap.min.css\" rel=\"stylesheet\">
 
-{% endblock %} {# body #}", "front/circuit_show.html.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/templates/front/circuit_show.html.twig");
+    <!-- Quelques polices d'écritures plus jolies :) -->
+    <link href=\"/css/bootstrap.min.css\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css?family=Varela+Round\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i\" rel=\"stylesheet\">
+
+    <!-- Un Css modifié :) -->
+    <link href=\"css/accueil.css\" rel=\"stylesheet\">
+
+</head>
+<body id=\"page-top\">
+
+<!-- NavBar Menu -->
+<nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
+    <div class=\"container\">
+        <a class=\"navbar-brand js-scroll-trigger\" href=\"#page-top\">Circuit {{circuit.description}}</a>
+        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link js-scroll-trigger\" href=\"#nouscontacter\">Nous contacter</a>
+                </li>
+            </ul>
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link js-scroll-trigger\" href=\"{{ circuit.id }}\">id</a>
+                </li>
+            </ul>
+
+        </div>
+        <a href=\"{{ path('front') }}\">Liste des circuits</a>
+    </div>
+</nav>
+
+<section id=\"container_table\" class=\"about-section text-center\">
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-lg-8 mx-auto\">
+                <h2 class=\"text-white mb-4\">Le circuit </h2>
+                <table class=\"table\">
+                    <tr>
+                        <th scope=\"col\">Id</th>
+                        <th scope=\"col\">Ville</th>
+                        <th scope=\"col\">Durée</th>
+                    </tr>
+                {% for etape in circuit.etapes %}
+                    <tr>
+                        <td>{{ etape.numeroEtape }}</td>
+                        <td>{{ etape.getVilleEtape() }}</td>
+                        <td>{{ etape.getNombreJours() }}</td>
+                    </tr>
+                {% endfor %} {# etapes #}
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+
+{% endblock %} {# body #}
+", "front/circuit_show.html.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/templates/front/circuit_show.html.twig");
     }
 }
