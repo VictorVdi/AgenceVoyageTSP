@@ -70,7 +70,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
 <!-- NavBar Menu -->
 <nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
     <div class=\"container\">
-        <a href=\"/\">Liste des circuits</a>
+        <a href=\"/\">Menu Principal</a>
     </div>
 </nav>
 
@@ -337,7 +337,7 @@ class __TwigTemplate_e9464661fcefefa0902f9e9513363b4291fa8f8c3d065f4315f9d512c75
 <!-- NavBar Menu -->
 <nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">
     <div class=\"container\">
-        <a href=\"/\">Liste des circuits</a>
+        <a href=\"/\">Menu Principal</a>
     </div>
 </nav>
 

@@ -1,39 +1,90 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Etape index{% endblock %}
+{% block main %}
+<html lang="fr">
 
-{% block body %}
-    <h1>Etape index</h1>
+<head>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>NumeroEtape</th>
-                <th>VilleEtape</th>
-                <th>NombreJours</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for etape in etapes %}
-            <tr>
-                <td>{{ etape.id }}</td>
-                <td>{{ etape.numeroEtape }}</td>
-                <td>{{ etape.villeEtape }}</td>
-                <td>{{ etape.nombreJours }}</td>
-                <td>
-                    <a href="{{ path('admin_etape_show', {'id': etape.id}) }}">show</a>
-                    <a href="{{ path('admin_etape_edit', {'id': etape.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Auteur" content="Dylan Soton & Victor Védie">
 
-    <a href="{{ path('admin_etape_new') }}">Create new</a>
-{% endblock %}
+    <!-- Quelques polices d'écritures plus jolies :) -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Un Css modifié :) -->
+    <link href="../../css/circuit.css" rel="stylesheet">
+
+</head>
+<body id="page-top">
+
+<!-- NavBar Menu -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a href="/">Menu Principal</a>
+        <a href="{{ path('admin_etape_new') }}">Create new</a>
+
+    </div>
+</nav>
+
+
+<section id="container-table" class="about-section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1>Etape index</h1>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>NumeroEtape</th>
+                            <th>VilleEtape</th>
+                            <th>NombreJours</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for etape in etapes %}
+                        <tr>
+                            <td>{{ etape.id }}</td>
+                            <td>{{ etape.numeroEtape }}</td>
+                            <td>{{ etape.villeEtape }}</td>
+                            <td>{{ etape.nombreJours }}</td>
+                            <td>
+                                <a href="{{ path('admin_etape_show', {'id': etape.id}) }}">show</a>
+                                <a href="{{ path('admin_etape_edit', {'id': etape.id}) }}">edit</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+
+<!-- Petit CopyRight Inutile Donc Indispensable ! -->
+<footer class="bg-black small text-center text-white-50">
+    <div class="container">
+        Copyright &copy; Dylan Soton & Victor Védie
+    </div>
+</footer>
+
+<!-- bootstrap.min & JavaScript -->
+<script src="/js/bootstrap.min.bundle.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="js/accueil.js"></script>
+
+</html>
+
+{% endblock %} {# main #}
