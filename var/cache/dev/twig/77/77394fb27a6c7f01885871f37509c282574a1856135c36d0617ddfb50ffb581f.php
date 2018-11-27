@@ -153,7 +153,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
             <div class=\"container d-flex h-100 align-items-center\">
                 <div class=\"mx-auto text-center\">
                     <h1 class=\"mx-auto my-0 text-uppercase\">Menu administrateur</h1>
-                    <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Faite en bonne usage ... </h2>
+                    <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Faite en bon usage ... </h2>
                     <a href=\"";
             // line 76
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("front");
@@ -376,7 +376,7 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
             <div class=\"container d-flex h-100 align-items-center\">
                 <div class=\"mx-auto text-center\">
                     <h1 class=\"mx-auto my-0 text-uppercase\">Menu administrateur</h1>
-                    <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Faite en bonne usage ... </h2>
+                    <h2 class=\"text-white-50 mx-auto mt-2 mb-5\">Faite en bon usage ... </h2>
                     <a href=\"{{ path('front') }}\" class=\"btn btn-primary js-scroll-trigger\">Voir la liste des circuits</a>
                     <a href=\"{{ path('admin_circuit_index') }}\" class=\"btn btn-primary js-scroll-trigger\">Modifier les circuits</a>
                     <a href=\"{{ path('admin_etape_index') }}\" class=\"btn btn-primary js-scroll-trigger\">Modifier les etapes</a>
@@ -485,6 +485,6 @@ class __TwigTemplate_f3501268c722b2dde8036ee7880c19857478a5bacf6e35ad92bb918390d
 
 {% endblock %} {# main #}
 
-", "home.html.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/templates/home.html.twig");
+", "home.html.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/templates/home.html.twig");
     }
 }

@@ -187,6 +187,6 @@ class __TwigTemplate_8391da889c3ae3ace180e4c06d9bc5c3594f7b32f56a0fbbe8f8dc8f0d5
         </div>
     </body>
 </html>
-", "@FOSUser/layout.html.twig", "/home/asphox/Documents/TSP/CSC4101/project-agvoy/agvoy-app-03/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig");
+", "@FOSUser/layout.html.twig", "/home/victor/Documents/csc4101/AgenceVoyageTSP/vendor/friendsofsymfony/user-bundle/Resources/views/layout.html.twig");
     }
 }
