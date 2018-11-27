@@ -1,75 +1,105 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Liste des circuits programmés</h1>
+{% block main %}
+<html lang="fr">
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Description</th>
-            <th>Nbr voyageurs</th>
-            <th>Date</th>
-            <th>Depart</th>
-            <th>Arrivee</th>
-            <th>Duree (jours)</th>
-            <th>Prix</th>
-            <th>Favoris</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for circuitP in circuitsP %}
-            <tr>
-                <td>
-                    <a href="{{ path('front_circuit_show', {id: circuitP.getCircuit().id}) }}">{{ circuitP.getCircuit().description }}</a>
-                </td>
-                <td>
-                    {{ circuitP.getNombrePersonnes() }}
-                </td>
-                <td>
-                    {{ circuitP.getDateDepart().format('d-m-Y') }}
-                </td>
-                <td>
-                    {{ circuitP.getCircuit().getPaysDepart() }}/{{ circuitP.getCircuit().getVilleDepart() }} </td>
-                <td>
-                    {{ circuitP.getCircuit().getPaysArrivee() }}/{{ circuitP.getCircuit().getVilleArrivee() }}
-                </td>
-                <td>
-                    {{ circuitP.getCircuit().getDureeCircuit() }}
-                </td>
-                <td>
-                    {{ circuitP.getPrix() }}
-                </td>
-                <td>
-                    <a href="{{ path('front_circuit_like',{id: circuitP.getCircuit().id }) }}">
-                        {% if  circuitP.getCircuit().id in app.session.get('likes') %}
-                            unlike
-                        {% else %}
-                            like
-                        {% endif %}
-                    </a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="2">no circuits found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<head>
 
-    {% if is_granted('ROLE_ADMIN') %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Auteur" content="Dylan Soton & Victor Védie">
+
+    <!-- Quelques polices d'écritures plus jolies :) -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Un Css modifié :) -->
+    <link href="../css/circuit.css" rel="stylesheet">
+
+</head>
+
+
+<section id="container-table" class="about-section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-white mb-4">Les circuits disponibles </h2>
+                <h1>Liste des circuits programmés</h1>
+                <table class="table">
+
+                    <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Nbr voyageurs</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Depart</th>
+                        <th scope="col">Arrivee</th>
+                        <th scope="col">Duree (jours)</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Favoris</th>
+                    </tr>
+                    {% for circuitP in circuitsP %}
+                        <tr>
+                            <td>
+                                <a href="{{ path('front_circuit_show', {id: circuitP.getCircuit().id}) }}">{{ circuitP.getCircuit().description }}</a>
+                            </td>
+                            <td>
+                                {{ circuitP.getNombrePersonnes() }}
+                            </td>
+                            <td>
+                                {{ circuitP.getDateDepart().format('d-m-Y') }}
+                            </td>
+                            <td>
+                                {{ circuitP.getCircuit().getPaysDepart() }}/{{ circuitP.getCircuit().getVilleDepart() }} </td>
+                            <td>
+                                {{ circuitP.getCircuit().getPaysArrivee() }}/{{ circuitP.getCircuit().getVilleArrivee() }}
+                            </td>
+                            <td>
+                                {{ circuitP.getCircuit().getDureeCircuit() }}
+                            </td>
+                            <td>
+                                {{ circuitP.getPrix() }}
+                            </td>
+                            <td>
+                                <a href="{{ path('front_circuit_like',{id: circuitP.getCircuit().id }) }}">
+                                    {% if  circuitP.getCircuit().id in app.session.get('likes') %}
+                                        unlike
+                                    {% else %}
+                                        like
+                                    {% endif %}
+                                </a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="2">no circuits found</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if is_granted('ROLE_ADMIN') %}
+<section id="container-table" class="about-section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h2 class="text-white mb-4">Les circuits disponibles </h2>
+                <table class="table">
+
+
         <h1>[admin] Liste des circuits non-programmés</h1>
 
         <table class="table">
-            <thead>
             <tr>
-                <th>Description</th>
-                <th>Depart</th>
-                <th>Arrivee</th>
-                <th>Duree (jours)</th>
+                <th scope="col">Description</th>
+                <th scope="col">Départ</th>
+                <th scope="col">Arrivée</th>
+                <th scope="col">Durée (jours)</th>
             </tr>
-            </thead>
-            <tbody>
+>
             {% for circuitNP in circuitsNP %}
                 <tr>
                     <td>
@@ -89,7 +119,28 @@
                     <td colspan="2">no circuits found</td>
                 </tr>
             {% endfor %}
-            </tbody>
         </table>
-    {% endif %}
-{% endblock %} {# body #}
+
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Petit CopyRight Inutile Donc Indispensable ! -->
+    <footer class="bg-black small text-center text-white-50">
+        <div class="container">
+            Copyright &copy; Dylan Soton & Victor Védie
+        </div>
+    </footer>
+
+    <!-- bootstrap.min & JavaScript -->
+    <script src="/js/bootstrap.min.bundle.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script src="js/accueil.js"></script>
+
+    </html>
+
+{% endblock %} {# main #}
